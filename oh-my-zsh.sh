@@ -11,7 +11,10 @@ fpath=($ZSH/functions $ZSH/completions $fpath)
 
 # Load all of the config files in ~/oh-my-zsh that end in .zsh
 # TIP: Add files you don't want in git to .gitignore
-for config_file ($ZSH/lib/*.zsh) source $config_file
+
+for config_file (completion functions git grep history theme-and-appearance termsupport); do
+  source $ZSH/lib/$config_file.zsh
+done
 
 # Set ZSH_CUSTOM to the path where your custom config files
 # and plugins exists, or else we will use the default custom/
